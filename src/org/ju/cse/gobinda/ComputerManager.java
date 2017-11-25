@@ -28,8 +28,8 @@ public class ComputerManager {
 	public static void copyFileUsingFileStreams(String sourchFilePath, String destinationFilePath) {
 
 		File source = new File(sourchFilePath);
-		File dest = new File(destinationFilePath + "/" + sourchFilePath.substring(3, destinationFilePath.length()));
-
+		File dest = new File(destinationFilePath + "/" + sourchFilePath.substring(3, sourchFilePath.length()));
+		
 		if (dest.isDirectory()) {
 			dest.mkdirs();
 			return;
@@ -60,7 +60,7 @@ public class ComputerManager {
 	}
 
 	public static String getPresentComputerTimeAsString() {
-		return new Date().toString().replaceAll(":", "_");
+		return new Date().toString().replaceAll(":", "_").replaceAll(" ", "_");
 	}
 
 }
